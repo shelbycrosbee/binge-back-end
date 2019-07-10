@@ -1,31 +1,9 @@
-# Adonis fullstack application
+# How to build MySQL Database
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
-
-1. Bodyparser
-2. Session
-3. Authentication
-4. Web security middleware
-5. CORS
-6. Edge template engine
-7. Lucid ORM
-8. Migrations and seeds
-
-## Setup
-
-Use the adonis command to install the blueprint
-
-```bash
-adonis new yardstick
-```
-
-or manually clone the repo and then run `npm install`.
+1. run command: ```mysql -u root -p```
+2. run: ```create database *name*;``` inside of your mysql command line 
+3. exit out of MySQL with ```\q```
+4. edit your .env file to reflect name of database
 
 
-### Migrations
 
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
-```
