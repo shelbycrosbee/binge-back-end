@@ -2,8 +2,8 @@
 const User = use('App/Models/User')
 
 class UserController {
-  async index(){
-   return await User.all()
+  async index() {
+    return await User.all()
   }
 
   // async login({ request, response, auth }) {
@@ -20,13 +20,13 @@ class UserController {
     response.send([newUser])
   }
 
-  async destroy({ request, response }){
+  async destroy({ request, response }) {
     const user = await User.find(request.params.id);
     await user.delet();
     response.send('Account Deleted')
   }
 
-  async update({ request, response }){
+  async update({ request, response }) {
     const user = await User.find(request.params.id);
     const body = request.post();
 
