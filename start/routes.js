@@ -25,4 +25,4 @@ Route.delete('/users/:id','UserController.destroy')
 
 Route.put('/users/:id', 'UserController.update')
 
-Route.get('/', 'UserContoller.index')
+Route.get('/users', 'UserContoller.index')
