@@ -6,11 +6,12 @@ class UserController {
     return await User.all()
   }
 
-  // async login({ request, response, auth }) {
-  //   const { email, password } = request.all()
-  //   const token = await auth.attempt(email, password)
-  //   response.send(token)
-  // }
+  async login({ request, response, auth }) {
+    const { email, password } = request.all()
+    // const token = await auth.attempt(email, password)
+    // response.send(token)
+    response.send(' ')
+  }
 
   async create({ request, response, auth }) {
     const { email, password, username } = request.all()
@@ -22,7 +23,7 @@ class UserController {
 
   async destroy({ request, response }) {
     const user = await User.find(request.params.id);
-    await user.delet();
+    await user.delete();
     response.send('Account Deleted')
   }
 
