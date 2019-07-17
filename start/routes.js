@@ -15,5 +15,12 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
+const Users = use('App/Models/User')
+const Database = use('Database')
 
 Route.on('/').render('welcome')
+
+Route.post('/register', 'UserController.create')
+Route.post('/login', 'UserController.login')
+Route.delete('/users/:id', 'UserController.destroy')
+Route.put('/users/:id', 'UserController.update')
