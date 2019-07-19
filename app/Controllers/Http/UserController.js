@@ -27,7 +27,7 @@ class UserController {
   async update({request, response}) {
     const user = await User.find(request.params.id)
     const body = request.post()
-    console.log(`${body}`)
+    // console.log(body)
     user.username = body.username
     user.password = body.password
     await user.save()
