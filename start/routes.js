@@ -24,3 +24,4 @@ Route.post('/register', 'UserController.create')
 Route.post('/login', 'UserController.login')
 Route.delete('/users/:id', 'UserController.destroy')
 Route.put('/users/:id', 'UserController.update')
+
