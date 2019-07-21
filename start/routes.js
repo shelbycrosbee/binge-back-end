@@ -21,8 +21,9 @@ const Database = use('Database')
 Route.on('/').render('welcome')
 
 Route.post('/register', 'UserController.create')
+
 Route.post('/login', 'UserController.login')
 
-Route.resource('users', 'UserController')
+Route.resource('users', 'UserController').middleware(['bingeAuth'])
 
-Route.resource('location', 'LocationController')
+Route.resource('location', 'LocationController').middleware(['bingeAuth'])
