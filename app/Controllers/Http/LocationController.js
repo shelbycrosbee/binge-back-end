@@ -11,7 +11,7 @@ class LocationController {
 
   async destroy({request, response}) {
     const location = await Location.find(request.params.id)
-    await Location.delete()
+    await location.delete()
     response.send('Location has been removed')
   }
 
