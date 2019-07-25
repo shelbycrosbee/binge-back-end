@@ -9,5 +9,11 @@
 6. run ```adonis migration:run```
 7. run ```adonis serve --dev```
 
+## Mark's instruction on how to build an API
 
+1. Create Route, ```Route.resource('users', 'UserController')```
+2. Create Controller ``` adonis make:controller User --type http``` add logic to Controller
+3. Create Model ```adonis make:model User```
+4. Create Seed ```adonis make:seed User```
+5. Repeat steps for location
 

@@ -14,11 +14,17 @@
 /** @type {import('@adonisjs/lucid/src/Factory')} */
 const Factory = use('Factory')
 
+<<<<<<< HEAD
 // const User = use('App/Models/User')
 
 Factory.blueprint('App/Models/User', (faker, i, data) => {
   return {
     username: data.name,
+=======
+Factory.blueprint('App/Models/User', (data) => {
+  return {
+    username: data.username,
+>>>>>>> 9919d57ced3719821181aaabf435b5581878e768
     email: data.email,
     password: data.password
   }
