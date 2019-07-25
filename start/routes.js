@@ -22,7 +22,9 @@ const Database = use('Database')
 Route.on('/').render('welcome')
 
 Route.post('/register', 'UserController.create')
+
 Route.post('/login', 'UserController.login')
+<<<<<<< HEAD
 Route.delete('/users/:id', 'UserController.destroy')
 Route.put('/users/:id', 'UserController.update')
 =======
@@ -39,3 +41,9 @@ Route.put('/users/:id', 'UserController.update')
 
 Route.get('/users', 'UserContoller.index')
 >>>>>>> 9919d57ced3719821181aaabf435b5581878e768
+=======
+
+Route.resource('users', 'UserController').middleware(['bingeAuth'])
+
+Route.resource('location', 'LocationController').middleware(['bingeAuth'])
+>>>>>>> master
