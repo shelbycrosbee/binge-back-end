@@ -7,13 +7,15 @@ class UserController {
     const { email, password, username } = request.all()
     const newUser = await User.create({ username, email, password });
     const token = await auth.attempt(email, password)
-    response.send([newUser, token])
+    response.send({user: newUser, token: token.token})
   }
 
   async login({request, response, auth}) {
-    const {email, password} = request.all()
-    const token = await auth.attempt(email, password)
-    response.send([token])
+    const {email, password } = request.all()
+    const token = await auth.attempt(email, password);
+    const user = await User.query().where('email', '=', email).fetch()
+    response.send({user: user.rows[0], token: token.token})
+    // response.send([user, token])
   }
 
   async destroy({request, response}) {
